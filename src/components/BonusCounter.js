@@ -1,21 +1,22 @@
-// import { useState } from "react";
-// import "../index.css";
+import { useState } from "react";
+import "../index.css";
+import Button from "./Button";
+import Counter from "./Counter";
 
+const NewCounter = ({configurations}) => {
 
-// const BonusCounter = () => {
-//   const [minNum, setMinNum] = useState('');
-//   const [MaxNum, setMaxNum] = useState('');
-//   const [initial, setInitial] = useState('');
-//   const [steps, setSteps] = useState('');
+    const [inputList, setInputList] = useState([])
+    const addDiv = () => {
+        setInputList(inputList.concat(<Counter configurations={configurations} key={inputList.length}/>))
+    };
+    return (
+        <div className="new-counter">
+            <Button onClick={addDiv}>Submit</Button>
+            <div className="results-container">
+                {inputList}
+            </div>
+        </div>
+    )
+}
 
-//   let configurations = [minNum, MaxNum, initial, steps];
-  
-  
-//   return (
-    
-//         {configurations}
-    
-//   )
-// }
-
-export default BonusCounter;
+export default NewCounter;

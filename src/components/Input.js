@@ -1,8 +1,6 @@
 import "../index.css";
 
 const Input = ({setMinNum, setMaxNum, setInitial, setSteps}) => {
-    // console.log(configurations)
-
     return (
         <div className="inputs-container">
             <input type="number" placeholder="Min number" onInput={(e) => setMinNum(e.target.value)}></input>

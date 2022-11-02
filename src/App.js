@@ -3,7 +3,7 @@ import Title from './components/Title';
 import Input from './components/Input';
 import './index.css';
 import { useState } from 'react';
-import NewCounter from './components/NewCounter';
+import BonusCounter from './components/BonusCounter';
 
 function App() {
   const [minNum, setMinNum] = useState(Number.MIN_SAFE_INTEGER);
@@ -14,10 +14,10 @@ function App() {
   return (
     <div>
       <Title text="useState Homeworks 31/10/22"/>
-      {/* <Counter configurations={configurations}/> */}
+      <Counter configurations={configurations}/>
       <div className='inputs-container'>
         <Input setMinNum={setMinNum} setMaxNum={setMaxNum} setInitial={setInitial} setSteps={setSteps} configurations={configurations}/>
-        <NewCounter configurations={configurations}/>
+        <BonusCounter configurations={configurations}/>
       </div>
     </div>
   );

@@ -52,13 +52,14 @@ h1{
 }
 
 .counter{
-  width: 10rem;
+  width: 5rem;
   height: 5rem;
   text-align: center;
   font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -82,14 +83,6 @@ input{
   gap: 1rem;
   justify-content: center;
   align-items: center;
-}
-
-.Div{
-  width: 100px;
-  height: 100px;
-  /* background-color: pink; */
-  border-radius: 5px;
-  text-align: center;
 }
 
 .results-container{
