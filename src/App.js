@@ -6,14 +6,14 @@ import { useState } from 'react';
 import NewCounter from './components/NewCounter';
 
 function App() {
-  const [minNum, setMinNum] = useState("");
-  const [maxNum, setMaxNum] = useState("");
-  const [initial, setInitial] = useState("");
-  const [steps, setSteps] = useState("");
+  const [minNum, setMinNum] = useState(Number.MIN_SAFE_INTEGER);
+  const [maxNum, setMaxNum] = useState(Number.MAX_SAFE_INTEGER);
+  const [initial, setInitial] = useState(0);
+  const [steps, setSteps] = useState(1);
   let configurations = {minNum, maxNum, initial, steps};
   return (
     <div>
-      <Title text="Homeworks"/>
+      <Title text="useState Homeworks 31/10/22"/>
       {/* <Counter configurations={configurations}/> */}
       <div className='inputs-container'>
         <Input setMinNum={setMinNum} setMaxNum={setMaxNum} setInitial={setInitial} setSteps={setSteps} configurations={configurations}/>
