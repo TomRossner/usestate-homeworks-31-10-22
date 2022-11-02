@@ -1,7 +1,7 @@
 import "../index.css";
 import { useState } from "react";
 
-const Counter = ({configurations, key}) => {
+const Counter = ({configurations}) => {
     const [counter, setCounter] = useState(0);
     const add = () => {
         if (counter === Number(configurations.maxNum)) return;
@@ -23,7 +23,7 @@ const Counter = ({configurations, key}) => {
       }
 
     return (
-        <div className="container" key={key}>
+        <div className="container">
             <div className="counter" style={{backgroundColor: `${setColor(configurations.minNum, configurations.maxNum)}`}}>{counter}</div>
             <div className="buttons-container">
                 <button disabled={counter === Number(configurations.maxNum) ? true : false} onClick={add} className="btn">+</button>
