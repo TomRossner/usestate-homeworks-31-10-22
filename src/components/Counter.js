@@ -14,12 +14,17 @@ const Counter = ({configurations}) => {
     }
 
     const setColor = (min, max) => {
-        min = Number(min);
-        max = Number(max);
+        try{
+            min = Number(min);
+            max = Number(max);
+        }catch(error) {
+            console.log(error);
+            return "transparent";
+        }
+
         if(min <= 0 && max < 20) return "lightcoral";
         if(min <= 10 && max < 50) return "lightgreen";
         if(min <= 15 && max < 100) return "lightyellow";
-        if(isNaN(min) || isNaN(max)) return "black";
         else return "pink";
       }
 

@@ -6,12 +6,12 @@ import Counter from "./Counter";
 const NewCounter = ({configurations}) => {
 
     const [counterList, setCounterList] = useState([]);
-    const addDiv = () => {
+    const addCounter = () => {
         setCounterList(counterList.concat(<Counter configurations={configurations} key={counterList.length}/>))
     };
     return (
         <div className="new-counter">
-            <Button onClick={addDiv}>Submit</Button>
+            <Button onClick={addCounter}>Submit</Button>
             <div className="results-container">
                 {counterList}
             </div>
