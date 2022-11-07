@@ -10,8 +10,10 @@ function App() {
   const [maxNum, setMaxNum] = useState(Number.MAX_SAFE_INTEGER);
   const [initial, setInitial] = useState(0);
   const [steps, setSteps] = useState(1);
+
   const configurations = {minNum, maxNum, initial, steps};
   const setConfigurations = {setMinNum, setMaxNum, setInitial, setSteps};
+  
   return (
     <div>
       <Title text="useState Homeworks 31/10/22"/>
