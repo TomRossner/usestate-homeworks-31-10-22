@@ -4,6 +4,7 @@ import { useState } from "react";
 const Counter = ({configurations}) => {
     const {minNum, maxNum, initial, steps} = configurations;
     const [counter, setCounter] = useState(Number(initial));
+    
     const add = () => {
         if (counter + Number(steps) > Number(maxNum)) return;
         else setCounter((counter) => counter + Number(steps));
@@ -14,17 +15,11 @@ const Counter = ({configurations}) => {
     }
 
     const setColor = (min, max) => {
-        try{
-            min = Number(min);
-            max = Number(max);
-        }catch(error) {
-            console.log(error);
-            return "transparent";
-        }
-
+        min = Number(min);
+        max = Number(max);
         if(min <= 0 && max < 20) return "lightcoral";
-        if(min <= 10 && max < 50) return "lightgreen";
-        if(min <= 15 && max < 100) return "lightyellow";
+        if(min <= 10 && max < 50) return "skyblue";
+        if(min <= 15 && max < 100) return "lightgreen";
         else return "pink";
       }
 
