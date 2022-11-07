@@ -1,6 +1,9 @@
 import "../index.css";
 
-const Input = ({setMinNum, setMaxNum, setInitial, setSteps}) => {
+const Input = ({setConfigurations}) => {
+
+    const {setMinNum, setMaxNum, setInitial, setSteps} = setConfigurations;
+    
     return (
         <div className="inputs-container">
             <input type="number" placeholder="Min number" onInput={(e) => setMinNum(e.target.value)}></input>

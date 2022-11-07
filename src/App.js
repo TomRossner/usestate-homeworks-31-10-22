@@ -10,13 +10,14 @@ function App() {
   const [maxNum, setMaxNum] = useState(Number.MAX_SAFE_INTEGER);
   const [initial, setInitial] = useState(0);
   const [steps, setSteps] = useState(1);
-  let configurations = {minNum, maxNum, initial, steps};
+  const configurations = {minNum, maxNum, initial, steps};
+  const setConfigurations = {setMinNum, setMaxNum, setInitial, setSteps};
   return (
     <div>
       <Title text="useState Homeworks 31/10/22"/>
       <Counter configurations={configurations}/>
       <div className='inputs-container'>
-        <Input setMinNum={setMinNum} setMaxNum={setMaxNum} setInitial={setInitial} setSteps={setSteps} configurations={configurations}/>
+        <Input setConfigurations={setConfigurations}/>
         <BonusCounter configurations={configurations}/>
       </div>
     </div>
