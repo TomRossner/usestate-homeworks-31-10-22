@@ -4,7 +4,7 @@ import { useState } from "react";
 const Counter = ({configurations}) => {
     const {minNum, maxNum, initial, steps} = configurations;
     const [counter, setCounter] = useState(Number(initial));
-    
+
     const add = () => {
         if (counter + Number(steps) > Number(maxNum)) return;
         else setCounter((counter) => counter + Number(steps));
@@ -21,7 +21,7 @@ const Counter = ({configurations}) => {
         if(min <= 10 && max < 50) return "skyblue";
         if(min <= 15 && max < 100) return "lightgreen";
         else return "pink";
-      }
+    }
 
     return (
         <div className="container">
