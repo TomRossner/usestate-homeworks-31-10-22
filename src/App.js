@@ -1,7 +1,7 @@
+import './index.css';
 import Counter from './components/Counter';
 import Title from './components/Title';
 import Input from './components/Input';
-import './index.css';
 import { useState } from 'react';
 import BonusCounter from './components/BonusCounter';
 
@@ -13,7 +13,7 @@ function App() {
 
   const configurations = {minNum, maxNum, initial, steps};
   const setConfigurations = {setMinNum, setMaxNum, setInitial, setSteps};
-  
+
   return (
     <div>
       <Title text="useState Homeworks 31/10/22"/>
