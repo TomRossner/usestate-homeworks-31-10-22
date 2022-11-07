@@ -2,14 +2,15 @@ import "../index.css";
 import { useState } from "react";
 
 const Counter = ({configurations}) => {
-    const [counter, setCounter] = useState(0);
+    const {minNum, maxNum, initial, steps} = configurations;
+    const [counter, setCounter] = useState(Number(initial));
     const add = () => {
-        if (counter === Number(configurations.maxNum)) return;
-        else setCounter((counter) => counter + Number(configurations.steps));
+        if (counter + Number(steps) > Number(maxNum)) return;
+        else setCounter((counter) => counter + Number(steps));
     }
     const subtract = () => {
-        if (counter === Number(configurations.minNum)) return;
-        else setCounter((counter) => counter - Number(configurations.steps));
+        if (counter - Number(steps) < Number(minNum)) return;
+        else setCounter((counter) => counter - Number(steps));
     }
 
     const setColor = (min, max) => {
@@ -24,10 +25,10 @@ const Counter = ({configurations}) => {
 
     return (
         <div className="container">
-            <div className="counter" style={{backgroundColor: `${setColor(configurations.minNum, configurations.maxNum)}`}}>{counter}</div>
+            <div className="counter" style={{backgroundColor: `${setColor(minNum, maxNum)}`}}>{counter}</div>
             <div className="buttons-container">
-                <button disabled={counter === Number(configurations.maxNum) ? true : false} onClick={add} className="btn">+</button>
-                <button disabled={counter === Number(configurations.minNum) ? true : false} onClick={subtract} className="btn">-</button>
+                <button disabled={counter === Number(maxNum) ? true : false} onClick={add} className="btn">+</button>
+                <button disabled={counter === Number(minNum) ? true : false} onClick={subtract} className="btn">-</button>
             </div>
         </div>
     )
